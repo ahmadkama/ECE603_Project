@@ -14,8 +14,8 @@ numpy.random.seed(seed)
 
 # load datasets
 #csv files were filtered based on the data.
-input_file = "C:\\XXX...csv"
-test_file = "C:\\XXX.csv"
+input_file = "input.txt"
+test_file = "test.txt"
 
 dataset = pd.read_csv(input_file).values
 
@@ -37,10 +37,10 @@ dummy_y = to_categorical(encoded_Y)
 (X_train, X_test, Y_train, Y_test) = train_test_split(X, dummy_y, test_size=0.001, random_state=seed)
 # create model
 model = Sequential()
-model.add(Dense(8, input_dim=8, init='normal', activation='relu'))
-model.add(Dense(4, init='normal', activation='relu'))
-model.add(Dense(3, init='normal', activation='tanh'))
-model.add(Dense(3, init='normal', activation='softmax'))
+model.add(Dense(8, input_dim=8, kernel_initializer='normal', activation='relu'))
+model.add(Dense(4, kernel_initializer='normal', activation='relu'))
+model.add(Dense(3, kernel_initializer='normal', activation='tanh'))
+model.add(Dense(3, kernel_initializer='normal', activation='softmax'))
 print(model.summary())
 # Compile model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -57,8 +57,8 @@ print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 plot_model(model, to_file='model.png')
 
 # Plot training & validation accuracy values
-plt.plot(history.history['acc'])
-plt.plot(history.history['val_acc'])
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
 plt.title('Model Accuracy')
 plt.ylabel('Accuracy')
 plt.xlabel('Epoch')
