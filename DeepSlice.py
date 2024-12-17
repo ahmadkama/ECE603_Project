@@ -63,7 +63,7 @@ plt.plot(history.history['val_accuracy'])
 plt.title('Model Accuracy')
 plt.ylabel('Accuracy')
 plt.xlabel('Epoch')
-plt.legend(['Train', 'Test'], loc='upper left')
+plt.legend(['Training', 'Validation'], loc='upper left')
 plt.show()
 
 # Plot training & validation loss values
@@ -72,5 +72,14 @@ plt.plot(history.history['val_loss'])
 plt.title('Model Loss')
 plt.ylabel('Loss')
 plt.xlabel('Epoch')
-plt.legend(['Train', 'Test'], loc='upper right')
+plt.legend(['Training', 'Validation'], loc='upper right')
 plt.show()
+
+# Save the model
+model.save('network_slice_model.h5')
+print("Model saved to network_slice_model.h5")
+
+# Plot model architecture
+plot_model(model, to_file='model_architecture.png', show_shapes=True, show_layer_names=True)
+print("Model architecture plot saved as model_architecture.png")
+
