@@ -16,7 +16,7 @@ To train the DeepSlice model:
 1. Ensure you have the training dataset in CSV format with 8 input features and 1 output label
 2. Run the training script:
    ```python
-   python DeepSlice.py input_dataset.csv
+   python DeepSlice.py
    ```
 3. The model will be trained and saved as 'network_slice_model.h5'
 4. Training metrics and plots will be displayed showing accuracy and loss curves
