@@ -1,13 +1,5 @@
 # DeepSlice: Deep Learning for Network Slicing in 5G Networks
 
-## Requirements
-- Python 3.6+
-- TensorFlow 2.x
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-
 ## Running the Model
 
 ### Training the Deep Learning Model
